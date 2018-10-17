@@ -5,8 +5,11 @@ function redditReq(subReddit, callback) {
   getRedditPage.addEventListener('load', function () {
     const dataReq = JSON.parse(this.responseText)
     const posts = dataReq.data.children
-    const getImg = posts.data
-    
+    const getImg =  function(){
+      if(!preview){
+       console.log('https://preview.redd.it/i9efjrhkc1r11.png?width=10…bp&amp;s=ee82b65931654984d105eeb829b63c5a5943803c')
+    }
+  }
     const cleanedData = posts.map(function (post) {
 
       return {
@@ -16,8 +19,8 @@ function redditReq(subReddit, callback) {
         img: post.preview
       }
     })
-    console.log(posts)
-    console.log(getImg)
+    //console.log(posts.map(()=>))
+    //console.log()
   });
   getRedditPage.open("GET", `https://www.reddit.com/r/${subReddit}.json`)
   getRedditPage.send();
