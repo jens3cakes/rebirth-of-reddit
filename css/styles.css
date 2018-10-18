@@ -9,12 +9,42 @@ body {
   margin: 0; }
 
 body {
-  background-color: lightblue; }
+  background-image: url("assets/bg.jpg");
+  backface-visibility: hidden;
+  background-repeat: repeat;
+  padding: 50px; }
 
 .header {
   padding: 10px;
   text-align: center;
   font-size: 2rem;
-  line-height: 1.2;
-  color: white;
-  background-color: dark grey; }
+  line-height: 1.2; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .header {
+      font-size: 2.125rem;
+      padding: 20px; } }
+  @media (min-width: 1024px) {
+    .header {
+      font-size: 2.125rem;
+      padding: 30px; } }
+  .header button {
+    font-size: 20px; }
+
+.container {
+  column-count: 2;
+  background-image: url("assets/bg.jpg");
+  margin: auto; }
+
+.subCards {
+  border: 2px black solid;
+  text-align: center;
+  padding: 20px;
+  size: 320px;
+  overflow: scroll;
+  background-color: aqua;
+  width: 311px;
+  height: 386px; }
+
+.image {
+  width: 137px;
+  height: 137px; }
